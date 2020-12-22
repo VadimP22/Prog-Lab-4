@@ -26,10 +26,10 @@ public class App {
 				return;
 			}
 
-
+			SprutsHouse.SprutsHouseFurnace furnace = new SprutsHouse.SprutsHouseFurnace();
 
 			try {
-				sprutsHouse = new SprutsHouse(printerToConsole, spruts, floor, cupboard);
+				sprutsHouse = new SprutsHouse(printerToConsole, spruts, floor, cupboard, furnace);
 			} catch (AlreadyExistsException e) {
 				printerToConsole.print("SprutsHouse");
 				printerToConsole.print(e.getMessage());

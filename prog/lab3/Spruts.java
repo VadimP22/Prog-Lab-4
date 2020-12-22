@@ -2,10 +2,21 @@ package prog.lab3;
 
 public class Spruts extends Human {
 
+    public class SptutsFriend {
+        void askHelp() {
+            messagePrinter.print("Spruts hasn't friends!");
+        }
+    }
+
+    SptutsFriend friends = new SptutsFriend();
+
     private static boolean isExists = false;
 
     public Spruts(MessagePrinter messagePrinter) throws AlreadyExistsException {
         super(messagePrinter);
+
+
+
 
         if (isExists) {
             throw new AlreadyExistsException();
@@ -16,7 +27,7 @@ public class Spruts extends Human {
 
     @Override
     public void cook(FoodSource foodSource) {
-
+        messagePrinter.print("Sptuts is trying to cook something. He's doing very badly");
     }
 
     @Override
@@ -56,12 +67,14 @@ public class Spruts extends Human {
 
     @Override
     public void cleanUp(Storage storage) {
-        messagePrinter.print("I'm lazy");
+        messagePrinter.print("I'm lazy. I will ask friends for help");
+        friends.askHelp();
     }
 
     @Override
     public void washTheDishes(Storage storage) {
-        messagePrinter.print("I'm lazy");
+        messagePrinter.print("I'm lazy. I will ask friends for help");
+        friends.askHelp();
     }
 
     @Override
